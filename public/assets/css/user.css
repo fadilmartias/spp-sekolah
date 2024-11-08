@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+:root {
+    --bg-color: #25282A;
+    --text-color: #E4E6EB;
+    --magenta: #FF00FF;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color) !important;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color) !important;
+}
+
+nav {
+    transition: all 0.15s ease-in;
+}
+
+header.scrolled nav {
+    background-color: var(--bg-color);
+}
+
+.text-magenta {
+    color: var(--magenta) !important;
+}
+
+.btn-magenta {
+    background-color: var(--magenta) !important;
+    color: var(--text-color);
+}
+
+.btn.btn-magenta:hover {
+    color: var(--text-color);
+}
+
+.text-black {
+    color: #25282A !important;
+}
+
+.text-muted {
+    color: #b3b3b3 !important;
+}
+
+#btn-topbar {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    -webkit-user-select: none;
+    user-select: none;
+    appearance: button;
+    z-index: 11;
+}
+
+
+
+@media (max-width: 991.8px) {
+    #topbar-menu {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 140px;
+        height: 110vh;
+        width: 100vw;
+        inset: 0;
+        font-size: 20px;
+        transition: all .3s ease-in-ouT;
+        opacity: 0;
+        z-index: -1;
+        transform: translateY(-120vh);
+        -webkit-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        background-color: var(--bg-color);
+    }
+
+    #btn-topbar.open-menu #topbar-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 992px) {
+    #btn-topbar.open-menu {
+        padding-left: 64px;
+    }
+
+    #topbar-menu {
+        position: absolute;
+        top: 46px;
+        left: 0;
+        font-size: 20px;
+        transition: all .3s linear;
+        opacity: 0;
+        z-index: -1;
+        -webkit-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        background-color: transparent;
+    }
+
+    #btn-topbar.open-menu #topbar-menu {
+        opacity: 1;
+        z-index: 10;
+        pointer-events: auto;
+    }
+}
